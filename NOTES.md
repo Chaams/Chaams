@@ -10,3 +10,6 @@
 
 ## 2026-11-21 — Modes de réponse (suite)
 - Décision : 11 commandes de plus (/dig, /gut, /devil, /firstprinciples, /longgame, /worstcase, /bestcase, /tradeoffs, /reframe, /zoomout, /zoomin). Total : 22 modes dans `.claude/commands/`.
+
+## 2026-11-21 — Modes créatifs
+- Décision : 11 commandes de plus (/remix, /twist, /mashup, /wild, /safe, /name, /openers, /story, /metaphor, /series, /hook). Total : 33 modes dans `.claude/commands/`.
