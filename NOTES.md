@@ -21,3 +21,7 @@
 
 ## 2026-11-21 — Modes de format
 - Décision : 11 commandes de plus (/outline, /checklist, /template, /table, /matrix, /timeline, /bullets, /json, /form, /script, /brief). Aucun conflit de nom détecté. Total : 55 modes.
+
+## 2026-11-21 — Modes de code
+- Décision : 11 commandes de plus (/code, /fixit, /refactor, /comment, /testit, /explainit, /optimize, /convert, /schema, /api, /secure). Total : 66 modes.
+- Renommage : /debug → /fixit (commande intégrée de Claude Code).
