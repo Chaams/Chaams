@@ -45,3 +45,9 @@
 - /name renommé en /jarvis (choix de l'utilisateur ; /name est une commande intégrée).
 - `MODES.md` : liste des 88 modes par catégorie, avec le tableau des renommages. Pas dans `README.md`, qui est la page publique du profil GitHub.
 - Handover remplacé par `memory/HANDOVER-2026-11-21-latest.md` (modes et Hermes Pet).
+
+## 2026-11-21 — Paraphe (générateur de signatures email)
+- Créé `paraphe/` : site statique original inspiré du concept d'esigna.app (signatures email + kits de marque). Design, noms et modèles originaux.
+- 10 modèles, éditeur live, copie HTML riche, kits de marque (localStorage + export/import JSON).
+- Déploiement : workflow `.github/workflows/paraphe-pages.yml` (GitHub Pages, dossier `paraphe/`).
+- Prochaines étapes : fusionner dans `main`, activer Pages (Source = GitHub Actions) ; idées : upload d'images vers un hébergeur, icônes réseaux, plus de modèles, domaine perso.
