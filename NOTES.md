@@ -18,3 +18,6 @@
 - Décision : 11 commandes de plus (/teachme, /quiz, /sumup, /gaps, /sources, /debate, /history, /projection, /jargon, /kidsafe, /oneline). Total : 44 modes.
 - Renommages pour éviter les conflits : /recap → /sumup (commande intégrée de Claude Code), /forecast → /projection (déjà pris par l'extension sales).
 - Prochaine étape : renommer /name, en conflit avec une commande intégrée.
+
+## 2026-11-21 — Modes de format
+- Décision : 11 commandes de plus (/outline, /checklist, /template, /table, /matrix, /timeline, /bullets, /json, /form, /script, /brief). Aucun conflit de nom détecté. Total : 55 modes.
