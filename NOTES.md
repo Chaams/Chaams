@@ -7,3 +7,6 @@
 ## 2026-11-21 — Modes de réponse
 - Décision : 11 commandes créées dans `.claude/commands/` (/plain, /pro, /founder, /coach, /skeptic, /teacher, /five, /tight, /longform, /sell, /calm). Usage : `/tight ta question`.
 - Prochaines étapes : ajuster les consignes d'un mode en éditant son fichier `.md` si le style ne convient pas.
+
+## 2026-11-21 — Modes de réponse (suite)
+- Décision : 11 commandes de plus (/dig, /gut, /devil, /firstprinciples, /longgame, /worstcase, /bestcase, /tradeoffs, /reframe, /zoomout, /zoomin). Total : 22 modes dans `.claude/commands/`.
