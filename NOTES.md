@@ -40,3 +40,8 @@
 - À distance : Tailscale Funnel (l'ESP32 ne peut pas exécuter Tailscale). La montre essaie l'URL locale, puis l'URL Funnel en HTTPS vérifié (ISRG Root X1).
 - Vérifié : 6 tests de la passerelle OK ; le firmware compile (PlatformIO, carte esp32s3box, M5Unified 0.2.29). Rien n'a encore été testé sur une vraie montre (l'utilisateur ne l'a pas encore).
 - Prochaines étapes : test sur l'appareil à la réception, synthèse vocale de la réponse, service launchd/systemd pour la passerelle.
+
+## 2026-11-21 — Rangement de fin de session
+- /name renommé en /jarvis (choix de l'utilisateur ; /name est une commande intégrée).
+- `MODES.md` : liste des 88 modes par catégorie, avec le tableau des renommages. Pas dans `README.md`, qui est la page publique du profil GitHub.
+- Handover remplacé par `memory/HANDOVER-2026-11-21-latest.md` (modes et Hermes Pet).
