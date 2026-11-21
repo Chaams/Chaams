@@ -29,3 +29,7 @@
 ## 2026-11-21 — Modes d'analyse et de décision
 - Décision : 11 commandes de plus (/comparer, /proscons, /decide, /priority, /root, /data, /pattern, /assumption, /factcheck, /counter, /essentials). Total : 77 modes.
 - Renommages : /verify → /factcheck et /simplify → /essentials (commandes intégrées de Claude Code).
+
+## 2026-11-21 — Modes d'action et de finition
+- Décision : 11 commandes de plus (/improve, /automate, /reusable, /habit, /frame, /gridit, /reverse, /roleplay, /pushback, /finalcheck, /allin). Aucun conflit de nom détecté. Total : 88 modes.
+- /alin (liste d'origine) créé sous le nom /allin (« all in »), probablement une coquille. /gridit fait une grille 2x2, pour le distinguer de /matrix (grille options × critères).
