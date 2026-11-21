@@ -25,3 +25,7 @@
 ## 2026-11-21 — Modes de code
 - Décision : 11 commandes de plus (/code, /fixit, /refactor, /comment, /testit, /explainit, /optimize, /convert, /schema, /api, /secure). Total : 66 modes.
 - Renommage : /debug → /fixit (commande intégrée de Claude Code).
+
+## 2026-11-21 — Modes d'analyse et de décision
+- Décision : 11 commandes de plus (/comparer, /proscons, /decide, /priority, /root, /data, /pattern, /assumption, /factcheck, /counter, /essentials). Total : 77 modes.
+- Renommages : /verify → /factcheck et /simplify → /essentials (commandes intégrées de Claude Code).
