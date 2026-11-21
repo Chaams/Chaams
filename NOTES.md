@@ -13,3 +13,8 @@
 
 ## 2026-11-21 — Modes créatifs
 - Décision : 11 commandes de plus (/remix, /twist, /mashup, /wild, /safe, /name, /openers, /story, /metaphor, /series, /hook). Total : 33 modes dans `.claude/commands/`.
+
+## 2026-11-21 — Modes d'apprentissage
+- Décision : 11 commandes de plus (/teachme, /quiz, /sumup, /gaps, /sources, /debate, /history, /projection, /jargon, /kidsafe, /oneline). Total : 44 modes.
+- Renommages pour éviter les conflits : /recap → /sumup (commande intégrée de Claude Code), /forecast → /projection (déjà pris par l'extension sales).
+- Prochaine étape : renommer /name, en conflit avec une commande intégrée.
