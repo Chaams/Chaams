@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paraphe — Signatures email gratuites</title>
+<meta name="description" content="Créez une signature email professionnelle en quelques minutes. Gratuit, open source, sans compte. Kits de marque inclus.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#">Paraphe<span>.</span></a>
+  <nav>
+    <a href="#editeur">Éditeur</a>
+    <a href="#modeles">Modèles</a>
+    <a href="#kits">Kits de marque</a>
+    <a href="#installer">Installer</a>
+    <a class="gh" href="https://github.com/Chaams/Chaams/tree/main/paraphe" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Une signature email pro,<br>prête en quelques minutes.</h1>
+  <p>Choisissez un modèle, remplissez vos infos, collez-la dans Gmail, Outlook ou Apple Mail. Gratuit, sans compte, open source.</p>
+  <a class="btn primary" href="#editeur">Créer ma signature</a>
+</section>
+
+<main id="editeur" class="editor">
+  <form id="form" class="panel" autocomplete="off">
+    <fieldset>
+      <legend>Identité</legend>
+      <label>Nom complet<input name="name" placeholder="Camille Durand"></label>
+      <label>Poste<input name="title" placeholder="Directrice artistique"></label>
+      <label>Entreprise<input name="company" placeholder="Studio Lumen"></label>
+    </fieldset>
+    <fieldset>
+      <legend>Contact <small>les champs vides sont masqués</small></legend>
+      <label>Email<input name="email" type="email" placeholder="camille@lumen.fr"></label>
+      <label>Téléphone<input name="phone" placeholder="+33 6 12 34 56 78"></label>
+      <label>Site web<input name="website" placeholder="lumen.fr"></label>
+      <label>Adresse<input name="address" placeholder="12 rue des Arts, Lyon"></label>
+    </fieldset>
+    <fieldset>
+      <legend>Réseaux</legend>
+      <label>LinkedIn<input name="linkedin" placeholder="https://linkedin.com/in/…"></label>
+      <label>Instagram<input name="instagram" placeholder="https://instagram.com/…"></label>
+      <label>X / Twitter<input name="x" placeholder="https://x.com/…"></label>
+    </fieldset>
+    <fieldset>
+      <legend>Images <small>URL publique (https) recommandée</small></legend>
+      <label>Photo (URL)<input name="photo" placeholder="https://…/photo.jpg"></label>
+      <label>Logo (URL)<input name="logo" placeholder="https://…/logo.png"></label>
+      <label class="row"><input type="checkbox" name="round" checked> Photo ronde</label>
+    </fieldset>
+    <fieldset>
+      <legend>Style</legend>
+      <label>Couleur<input name="color" type="color" value="#2f5bea"></label>
+      <label>Police
+        <select name="font">
+          <option value="Arial, Helvetica, sans-serif">Arial</option>
+          <option value="Verdana, Geneva, sans-serif">Verdana</option>
+          <option value="Georgia, 'Times New Roman', serif">Georgia</option>
+          <option value="'Trebuchet MS', Helvetica, sans-serif">Trebuchet</option>
+          <option value="'Times New Roman', Times, serif">Times</option>
+        </select>
+      </label>
+      <label>Message de fin<input name="tagline" placeholder="Au plaisir d'échanger."></label>
+    </fieldset>
+    <button type="button" class="btn ghost" id="reset">Réinitialiser</button>
+  </form>
+
+  <section class="panel preview-wrap">
+    <div class="mail">
+      <div class="mail-head"><span></span><span></span><span></span><em>Nouveau message</em></div>
+      <div class="mail-body">
+        <p class="muted">Bonjour,<br><br>Merci pour votre retour, je reviens vers vous très vite.<br><br></p>
+        <div id="preview"></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" id="copy">Copier la signature</button>
+      <button class="btn" id="copyHtml">Copier le HTML</button>
+      <button class="btn" id="download">Télécharger .html</button>
+    </div>
+    <p id="toast" role="status" aria-live="polite"></p>
+  </section>
+</main>
+
+<section id="modeles" class="block">
+  <h2>Modèles <small id="tplCount"></small></h2>
+  <p class="lead">Tous gratuits. Changez de modèle à tout moment sans perdre vos informations.</p>
+  <div id="templates" class="grid"></div>
+</section>
+
+<section id="kits" class="block">
+  <h2>Kits de marque</h2>
+  <p class="lead">Enregistrez couleur, police, entreprise, logo et site comme kit, puis appliquez-le en un clic ou partagez-le avec votre équipe (export JSON).</p>
+  <div class="kit-bar">
+    <input id="kitName" placeholder="Nom du kit (ex. Studio Lumen)">
+    <button class="btn primary" id="saveKit">Enregistrer le style actuel</button>
+    <button class="btn" id="exportKits">Exporter</button>
+    <label class="btn">Importer<input type="file" id="importKits" accept="application/json" hidden></label>
+  </div>
+  <div id="kitList" class="grid kits"></div>
+</section>
+
+<section id="installer" class="block">
+  <h2>Installer votre signature</h2>
+  <div class="grid steps">
+    <article><h3>Gmail</h3><ol><li>Cliquez « Copier la signature ».</li><li>Gmail → ⚙️ Paramètres → Voir tous les paramètres.</li><li>Section « Signature » → Créer → collez (Ctrl/Cmd + V).</li><li>Enregistrez en bas de page.</li></ol></article>
+    <article><h3>Outlook</h3><ol><li>Copiez la signature.</li><li>Paramètres → Comptes → Signatures.</li><li>Nouvelle signature → collez.</li><li>Choisissez-la par défaut, enregistrez.</li></ol></article>
+    <article><h3>Apple Mail</h3><ol><li>Copiez la signature.</li><li>Mail → Réglages → Signatures → +.</li><li>Décochez « Toujours utiliser ma police par défaut ».</li><li>Collez dans la zone de signature.</li></ol></article>
+  </div>
+</section>
+
+<footer>
+  <p>Paraphe — projet libre et gratuit. Vos données restent dans votre navigateur.
+  <a href="https://github.com/Chaams/Chaams/tree/main/paraphe" target="_blank" rel="noopener">Code source sur GitHub</a></p>
+</footer>
+
+<script src="templates.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
