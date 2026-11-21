@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Pet</title>
+<style>
+  :root { --bg:#f6f5f2; --fg:#1d1d1b; --muted:#6b6a66; --card:#fff; --accent:#2f6fde; --line:#e2e0db; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141413; --fg:#eceae4; --muted:#9a988f; --card:#1f1f1d; --accent:#7aa5ff; --line:#33322e; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui, sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:16px; }
+  h1 { font-size:20px; margin:8px 0 16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; margin-bottom:10px; }
+  .q { color:var(--muted); font-size:14px; margin-bottom:4px; }
+  form { display:flex; gap:8px; position:sticky; bottom:0; background:var(--bg); padding:12px 0; }
+  input, button { font:inherit; padding:12px; border-radius:10px; border:1px solid var(--line); }
+  input { flex:1; min-width:0; background:var(--card); color:var(--fg); }
+  button { background:var(--accent); color:#fff; border:none; cursor:pointer; }
+  button:disabled { opacity:.5; }
+  .hint { color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hermes Pet</h1>
+  <p class="hint" id="status">Écris un message : la réponse s'affiche ici et sur la montre.</p>
+  <div id="log"></div>
+  <form id="f">
+    <input id="t" autocomplete="off" placeholder="Ton message à Hermes" required>
+    <button id="b">Envoyer</button>
+  </form>
+</main>
+<script>
+  // Le jeton d'appareil est demandé une fois et gardé dans ce navigateur.
+  function token() {
+    let t = null;
+    try { t = localStorage.getItem("petToken"); } catch (e) {}
+    if (!t) {
+      t = prompt("Jeton d'appareil (PET_TOKEN) :") || "";
+      try { localStorage.setItem("petToken", t); } catch (e) {}
+    }
+    return t;
+  }
+  const log = document.getElementById("log");
+  function add(q, a) {
+    const c = document.createElement("div");
+    c.className = "card";
+    const qe = document.createElement("div"); qe.className = "q"; qe.textContent = q;
+    const ae = document.createElement("div"); ae.textContent = a;
+    c.append(qe, ae);
+    log.append(c);
+    c.scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("f").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = document.getElementById("t"), btn = document.getElementById("b");
+    const text = input.value.trim();
+    if (!text) return;
+    btn.disabled = true; btn.textContent = "…";
+    try {
+      const r = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Pet-Token": token() },
+        body: JSON.stringify({ text, source: "phone" }),
+      });
+      const d = await r.json();
+      if (r.status === 401) { try { localStorage.removeItem("petToken"); } catch (e) {} }
+      add(text, r.ok ? d.answer : "Erreur : " + d.error);
+      if (r.ok) input.value = "";
+    } catch (err) {
+      add(text, "Erreur réseau : la passerelle est-elle lancée ?");
+    } finally {
+      btn.disabled = false; btn.textContent = "Envoyer";
+    }
+  });
+</script>
+</body>
+</html>

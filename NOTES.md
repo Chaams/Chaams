@@ -29,3 +29,14 @@
 ## 2026-11-21 — Modes d'analyse et de décision
 - Décision : 11 commandes de plus (/comparer, /proscons, /decide, /priority, /root, /data, /pattern, /assumption, /factcheck, /counter, /essentials). Total : 77 modes.
 - Renommages : /verify → /factcheck et /simplify → /essentials (commandes intégrées de Claude Code).
+
+## 2026-11-21 — Modes d'action et de finition
+- Décision : 11 commandes de plus (/improve, /automate, /reusable, /habit, /frame, /gridit, /reverse, /roleplay, /pushback, /finalcheck, /allin). Aucun conflit de nom détecté. Total : 88 modes.
+- /alin (liste d'origine) créé sous le nom /allin (« all in »), probablement une coquille. /gridit fait une grille 2x2, pour le distinguer de /matrix (grille options × critères).
+
+## 2026-11-21 — Hermes Pet (montre M5Stack StopWatch + Hermes Agent)
+- Décision : projet dans `hermes-pet/`. Une passerelle Python (`bridge/`, bibliothèque standard uniquement) entre la montre/le téléphone et l'API OpenAI-compatible de Hermes (`hermes gateway`, 127.0.0.1:8642). La clé Hermes reste sur l'ordinateur ; la montre n'a qu'un `PET_TOKEN`.
+- Trois modes : questions prêtes (bouton A court), voix (bouton A maintenu → WAV → faster-whisper local), téléphone (page `/phone`, la montre interroge `/inbox` toutes les 4 s).
+- À distance : Tailscale Funnel (l'ESP32 ne peut pas exécuter Tailscale). La montre essaie l'URL locale, puis l'URL Funnel en HTTPS vérifié (ISRG Root X1).
+- Vérifié : 6 tests de la passerelle OK ; le firmware compile (PlatformIO, carte esp32s3box, M5Unified 0.2.29). Rien n'a encore été testé sur une vraie montre (l'utilisateur ne l'a pas encore).
+- Prochaines étapes : test sur l'appareil à la réception, synthèse vocale de la réponse, service launchd/systemd pour la passerelle.
