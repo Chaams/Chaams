@@ -53,3 +53,9 @@
 - Prochaines étapes : fusionner dans `main`, activer Pages (Source = GitHub Actions) ; idées : upload d'images vers un hébergeur, icônes réseaux, plus de modèles, domaine perso.
 - 2026-11-22 : GitHub Pages bloqué (Pages jamais activé côté repo, `has_pages: false`). Site publié sur **Vercel** : https://paraphe-psi.vercel.app (projet `paraphe`, équipe chaams-projects, déploiement direct de fichiers).
 - À faire pour les mises à jour auto : installer l'app GitHub de Vercel sur Chaams/Chaams, puis lier le projet `paraphe` au repo avec Root Directory = `paraphe`.
+
+## 2026-11-22 — Mod session-handoff (Claude Code 2.1.330)
+- Créé `session-handoff/` : `/handoff` ouvre un panneau pour choisir la session destinataire (`ListAgents`) et relire un message de passation en six champs (objectif, fait, décisions, fichiers, étape suivante, critère d'acceptation) avant l'envoi (`$.session.send`).
+- Décisions : brouillon via `$.model.fork` (seul le résumé quitte la session, pas l'historique) ; secrets masqués à la génération et à l'envoi ; id SHA-256 gardé 7 jours dans `$.store` contre les doublons ; le modèle ne peut pas envoyer ni relayer un message portant l'en-tête de passation (anti-boucle).
+- Vérifié : `claude plugin validate` OK (avertissements auteur/icône), 8 tests OK (`claude plugin test`). Pas encore testé entre deux vraies sessions.
+- Prochaines étapes : essai réel entre deux sessions (le mod doit être installé des deux côtés) ; éventuellement une marketplace pour l'installer avec `/plugin install`.

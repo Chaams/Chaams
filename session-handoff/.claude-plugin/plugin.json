@@ -1,0 +1,7 @@
+{
+  "name": "session-handoff",
+  "version": "0.1.0",
+  "description": "تسليم منظم بين جلسات Claude Code: اختيار الجلسة المستقبلة ومراجعة رسالة التسليم قبل الإرسال.",
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}
