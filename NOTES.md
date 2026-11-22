@@ -59,3 +59,4 @@
 - Décisions : brouillon via `$.model.fork` (seul le résumé quitte la session, pas l'historique) ; secrets masqués à la génération et à l'envoi ; id SHA-256 gardé 7 jours dans `$.store` contre les doublons ; le modèle ne peut pas envoyer ni relayer un message portant l'en-tête de passation (anti-boucle).
 - Vérifié : `claude plugin validate` OK (avertissements auteur/icône), 8 tests OK (`claude plugin test`). Pas encore testé entre deux vraies sessions.
 - Prochaines étapes : essai réel entre deux sessions (le mod doit être installé des deux côtés) ; éventuellement une marketplace pour l'installer avec `/plugin install`.
+- Ajouté aussi `my-mod/` (mod de départ : commande `/my-mod`, dernière commande Bash dans la ligne de statut). Validation OK.
