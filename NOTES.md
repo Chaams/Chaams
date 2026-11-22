@@ -51,3 +51,5 @@
 - 10 modèles, éditeur live, copie HTML riche, kits de marque (localStorage + export/import JSON).
 - Déploiement : workflow `.github/workflows/paraphe-pages.yml` (GitHub Pages, dossier `paraphe/`).
 - Prochaines étapes : fusionner dans `main`, activer Pages (Source = GitHub Actions) ; idées : upload d'images vers un hébergeur, icônes réseaux, plus de modèles, domaine perso.
+- 2026-11-22 : GitHub Pages bloqué (Pages jamais activé côté repo, `has_pages: false`). Site publié sur **Vercel** : https://paraphe-psi.vercel.app (projet `paraphe`, équipe chaams-projects, déploiement direct de fichiers).
+- À faire pour les mises à jour auto : installer l'app GitHub de Vercel sur Chaams/Chaams, puis lier le projet `paraphe` au repo avec Root Directory = `paraphe`.
